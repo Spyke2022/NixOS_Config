@@ -47,7 +47,16 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    settings = {
+      Theme = {
+        Background = "/etc/nixos/wallpapers/lunik1-dracula.png";
+      };
+    };
+  };
+
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
