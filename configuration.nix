@@ -113,6 +113,8 @@
     nerd-fonts.fira-code
   ];
 
+  programs.bash.shellInit = "fastfetch";
+
   environment.systemPackages = with pkgs; [
     google-chrome
     fastfetch
