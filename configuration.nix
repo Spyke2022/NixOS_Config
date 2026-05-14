@@ -52,7 +52,7 @@
     wayland.enable = true;
     settings = {
       Theme = {
-        Background = "/etc/nixos/wallpapers/lunik1-dracula.png";
+        Background = "/etc/nixos/wallpapers/sddm-background.png";
       };
     };
   };
@@ -122,7 +122,10 @@
     nerd-fonts.fira-code
   ];
 
-  programs.bash.shellInit = "fastfetch";
+  programs.bash.shellInit = ''
+    export PATH="/run/current-system/sw/bin:$PATH"
+    fastfetch
+  '';
 
   environment.systemPackages = with pkgs; [
     google-chrome
