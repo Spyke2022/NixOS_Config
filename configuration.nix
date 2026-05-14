@@ -116,6 +116,10 @@
   environment.systemPackages = with pkgs; [
     google-chrome
     fastfetch
+    git
+    gh
+    libreoffice
+    thunderbird
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
