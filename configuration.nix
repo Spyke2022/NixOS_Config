@@ -10,6 +10,14 @@
       ./hardware-configuration.nix
     ];
 
+
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -127,7 +135,12 @@
     fastfetch
   '';
 
+  # Cursor theme
+  environment.sessionVariables.XCURSOR_THEME = "Bibata-Modern-Amber";
+  environment.sessionVariables.XCURSOR_SIZE = "24";
+
   environment.systemPackages = with pkgs; [
+    bibata-cursors
     google-chrome
     fastfetch
     git
