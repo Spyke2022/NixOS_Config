@@ -141,6 +141,8 @@
 
   environment.systemPackages = with pkgs; [
     bibata-cursors
+    bluez
+    bluez-tools
     google-chrome
     fastfetch
     git
